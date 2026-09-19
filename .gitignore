@@ -1,37 +1,39 @@
+# ---- Build directories (root only: not inside thirdparty/) ----
+/build/
+/Build/
+/build-*/
+/out/
+/cmake-build-*/
+/Makefile
+
+# ---- Build artifacts ----
+
 # Prerequisites
 *.d
 
-# Compiled Object files
+# Compiled object files
 *.slo
 *.lo
 *.o
 *.obj
 
-# Precompiled Headers
+# Precompiled headers
 *.gch
 *.pch
 
 # Linker files
 *.ilk
 
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+# Compiled dynamic libraries
 *.so
+*.so.*
 *.dylib
 *.dll
-*.so.*
 
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
+# Compiled static libraries
 *.a
+*.la
+*.lai
 *.lib
 
 # Executables
@@ -39,31 +41,61 @@
 *.out
 *.app
 
-# Build directories
-build/
-Build/
-build-*/
+# Debug information
+*.pdb
+*.dwo
+*.dSYM/
 
-# CMake generated files
+# ---- CMake generated ----
 CMakeFiles/
 CMakeCache.txt
+CMakeScripts/
 cmake_install.cmake
-Makefile
 install_manifest.txt
 compile_commands.json
+CTestTestfile.cmake
+CMakeUserPresets.json
+_deps/
 
-# Temporary files
+# ---- Tests & cache ----
+Testing/
+.cache/
+.ccache/
+
+# ---- Package managers ----
+vcpkg_installed/
+/conan/
+conanbuildinfo.*
+conaninfo.txt
+
+# ---- IDE / editors ----
+.idea/
+.vs/
+.vscode/
+*.user
+*.suo
+cscope.*
+tags
+.clangd/
+.ccls-cache/
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ---- Misc ----
 *.tmp
 *.log
 *.bak
 *.swp
+*~
 
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
+# ---- Vendored third-party sources: keep tracked ----
+!thirdparty/**/*.a
+!thirdparty/**/*.lib
+!thirdparty/**/*.so
+!thirdparty/**/*.dylib
+!thirdparty/**/Makefile
+!thirdparty/**/*.out
